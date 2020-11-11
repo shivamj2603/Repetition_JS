@@ -1,4 +1,4 @@
-var num = process.argv[2];
+var num = parseInt(process.argv[2]);
 function isPrime(num) {
   if (num == 1) {
     return false;
@@ -7,7 +7,7 @@ function isPrime(num) {
     return true;
   }
   else {
-    for (var i = 2; i < (num / 2); i++) {
+    for (var i = 2; i <= Math.floor(Math.sqrt(num)); i++) {
       if (num % i == 0) {
         return false;
       }

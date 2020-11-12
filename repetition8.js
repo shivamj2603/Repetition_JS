@@ -3,17 +3,18 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
 rl.question('Think of a number between 1 and 100(Y/N)', (answer) => {
   if (answer == 'Y') {
     checkNum(50);
   }
-  rl.close();
 });
+
 var checkNum = function (num) {
   rl.question('Is number equal to ' + num, function (answer) {
     if (answer == 'Y') {
       console.log("Magic number is : " + num);
-      return rl.close(); //closing RL and returning from function.
+      rl.close();
     }
     else if (answer == 'N') {
       rl.question('Is number greater than ' + num + ' ?(Y/N)', function (answer) {
@@ -25,6 +26,5 @@ var checkNum = function (num) {
         }
       });
     }
-    rl.close();
   });
 }
